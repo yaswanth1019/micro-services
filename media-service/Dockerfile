@@ -1,7 +1,7 @@
-# use the official node.js 18 image with alphine linux as base image
-FROM node:18-alphine
+# use the official node.js 18 image with alpine linux as base image
+FROM node:18-alpine
 
-WORKDIR /use/src/app
+WORKDIR /usr/src/app
 
 COPY package*.json ./
 
@@ -11,4 +11,4 @@ COPY . .
 
 EXPOSE 3003
 
-CMD [ "node","src/server.js" ]
+CMD [ "node", "src/server.js" ]

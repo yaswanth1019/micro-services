@@ -59,12 +59,15 @@ services:
       - RABBITMQ_URL=amqp://rabbitmq:5672
 
 redis:
-  image: redis:alphine
-  ports: -"6379:6379"
+  image: redis:alpine
+  ports:
+    - "6379:6379"
 
 rabbitmq:
   image: rabbitmq:3-management
-  ports: -"5672:5672" -"15672:15672"
+  ports:
+    - "5672:5672"
+    - "15672:15672"
   healthcheck:
     test: [ "CMD", "rabbitmq-diagnostics", "-q", "ping" ]
     interval: 30s
